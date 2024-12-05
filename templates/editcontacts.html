@@ -1,0 +1,36 @@
+{% extends 'starter-page.html' %}
+
+{% load static %}
+
+{% block body %}
+<form method="POST" action="/updatecontacts/{{ contact.id }}">
+    {% csrf_token %}
+  <div class="row gy-4">
+
+    <div class="col-md-6">
+      <input type="text" name="name" value="{{ contact.name }}" class="form-control" placeholder="Your Name" required="">
+    </div>
+
+    <div class="col-md-6 ">
+      <input type="email" class="form-control" name="email" value="{{ contact.email }}" placeholder="Your Email" required="">
+    </div>
+
+    <div class="col-md-12">
+      <input type="text" class="form-control" name="subject" value="{{ contact.subject }}" placeholder="Subject" required="">
+    </div>
+
+    <div class="col-md-12">
+      <textarea class="form-control" name="message"  rows="4" placeholder="Message" required="">{{ contact.message }}</textarea>
+    </div>
+
+    <div class="col-md-12 text-center">
+      <div class="loading">Loading</div>
+      <div class="error-message"></div>
+      <div class="sent-message">Your message has been sent. Thank you!</div>
+
+      <button type="submit" class="btn btn-primary">Update Message</button>
+    </div>
+
+  </div>
+</form>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'starter-page.html' %}
+
+{% load static %}
+
+{% block body %}
+	<table class="table table-bordered table-info container">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Website</th>
+        <th>Comment</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for x in comments %}
+        <tr>
+        <td>{{ x.name }}</td>
+        <td>{{ x.email }}</td>
+        <td>{{ x.website }}</td>
+        <td>{{ x.comment }}</td>
+        <td>
+            <a href="/editcomments/{{ x.id }}" class="btn btn-outline-warning">EDIT</a>
+            <a href="/deletecomments/{{ x.id }}" class="btn btn-outline-danger">DELETE</a>
+        </td>
+        </tr>
+
+    {% endfor %}
+
+
+    </tbody>
+    </table>
+{% endblock %}

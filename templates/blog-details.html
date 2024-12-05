@@ -218,9 +218,9 @@
       <section id="comment-form" class="comment-form section">
         <div class="container">
 
-          <form action="">
-
-            <h4>Post Comment</h4>
+          <form method="POST">
+            {% csrf_token %}
+            <h4>Post Your Comment</h4>
             <p>Your email address will not be published. Required fields are marked * </p>
             <div class="row">
               <div class="col-md-6 form-group">
@@ -242,7 +242,7 @@
             </div>
 
             <div class="text-center">
-              <button type="submit" class="btn btn-primary">Post Comment</button>
+              <button type="submit" class="btn btn-primary">Post Your Comment</button>
             </div>
 
           </form>

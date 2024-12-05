@@ -1,0 +1,34 @@
+{% extends 'starter-page.html' %}
+
+{% load static %}
+
+{% block body %}
+<form method="POST" action="/updatecomments/{{comments.id}}">
+  {% csrf_token %}
+  <h4>Update Your Comment</h4>
+  <p>Your email address will not be published. Required fields are marked * </p>
+  <div class="row">
+    <div class="col-md-6 form-group">
+      <input name="name" type="text" class="form-control" value="{{comments.name}}" placeholder="Your Name*">
+    </div>
+    <div class="col-md-6 form-group">
+      <input name="email" type="text" class="form-control" value="{{comments.email}}" placeholder="Your Email*">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col form-group">
+      <input name="website" type="text" class="form-control" value="{{comments.website}}" placeholder="Your Website">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col form-group">
+      <textarea name="comment" class="form-control" placeholder="Your Comment*">{{comments.comment}}</textarea>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <button type="submit" class="btn btn-primary">Update your Comment</button>
+  </div>
+
+</form>
+{% endblock %}
