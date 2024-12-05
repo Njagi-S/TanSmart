@@ -4,7 +4,7 @@ import json
 #Sfrom django.http import HttpResponse
 #from requests.auth import HTTPBasicAuth
 
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 #from tanapp.credentials import MpesaAccessToken, LipanaMpesaPassword
 #from tanapp.models import BookTable, ContactTable,Member, ImageModel
 #from tanapp.forms import BookTableForm, ContactTableForm, ImageUploadForm
@@ -37,8 +37,8 @@ def projects(request):
 def services(request):
     return render(request, 'services.html')
 
-def servicedetails(request):
-    return render(request, 'service-details.html')
-
 def starter(request):
     return render(request, 'starter-page.html')
+
+def testimonials(request):
+    return render(request, 'testimonials.html')

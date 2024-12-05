@@ -3,178 +3,368 @@
 {% load static%}
 
 {% block body%}
- <!-- Projects Section -->
- <section id="projects" class="projects section">
+<!-- Projects Section -->
+<section id="projects" class="projects section">
 
-    <!-- Section Title -->
-    <div class="container section-title" data-aos="fade-up">
-      <h2>Projects</h2>
-      <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-    </div><!-- End Section Title -->
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Projects</h2>
+    <p>From residential remodels to large-scale commercial constructions, explore the projects shaping Kenya’s future.
+    </p>
+  </div><!-- End Section Title -->
 
-    <div class="container">
+  <div class="container">
 
-      <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+    <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
-        <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-          <li data-filter="*" class="filter-active">All</li>
-          <li data-filter=".filter-remodeling">Remodeling</li>
-          <li data-filter=".filter-construction">Construction</li>
-          <li data-filter=".filter-repairs">Repairs</li>
-          <li data-filter=".filter-design">Design</li>
-        </ul><!-- End Portfolio Filters -->
+      <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+        <li data-filter="*" class="filter-active">All</li>
+        <li data-filter=".filter-remodeling">Remodeling</li>
+        <li data-filter=".filter-construction">Construction</li>
+        <li data-filter=".filter-repairs">Repairs</li>
+        <li data-filter=".filter-design">Design</li>
+      </ul><!-- End Portfolio Filters -->
 
-        <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+      <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-remodeling">
-            <div class="portfolio-content h-100">
-              <img src="{% static 'assets/img/projects/remodeling-1.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="{% static 'assets/img/projects/remodeling-1.jpg' %}" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="{% url 'projectdetails' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-remodeling">
+          <div class="portfolio-content h-100">
+            <img src="{% static 'assets/img/projects/remodeling-1.jpg' %}" class="img-fluid"
+              alt="Residential Remodeling">
+            <div class="portfolio-info">
+              <h4>Residential Remodeling</h4>
+              <p>Transforming homes in Nairobi to reflect modern designs while maintaining functionality.</p>
+              <a href="{% static 'assets/img/projects/remodeling-1.jpg' %}" title="Residential Remodeling"
+                data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <a href="{% url 'projectdetails' %}" title="More Details" class="details-link"><i
+                  class="bi bi-link-45deg"></i></a>
             </div>
-          </div><!-- End Portfolio Item -->
+          </div>
+        </div><!-- End Portfolio Item -->
 
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-construction">
-            <div class="portfolio-content h-100">
-              <img src="{% static 'assets/img/projects/construction-1.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 1</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="{% static 'assets/img/projects/construction-1.jpg' %}" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="{% url 'projectdetails' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-construction">
+          <div class="portfolio-content h-100">
+            <img src="{% static 'assets/img/projects/construction-1.jpg' %}" class="img-fluid" alt="Office Complex">
+            <div class="portfolio-info">
+              <h4>Office Complex</h4>
+              <p>Building state-of-the-art office spaces designed to support Kenya’s growing economy.</p>
+              <a href="{% static 'assets/img/projects/construction-1.jpg' %}" title="Office Complex"
+                data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
+                  class="bi bi-zoom-in"></i></a>
+              <a href="{% url 'projectdetails' %}" title="More Details" class="details-link"><i
+                  class="bi bi-link-45deg"></i></a>
             </div>
-          </div><!-- End Portfolio Item -->
+          </div>
+        </div><!-- End Portfolio Item -->
 
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-repairs">
-            <div class="portfolio-content h-100">
-              <img src="{% static 'assets/img/projects/repairs-1.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 1</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="{% static 'assets/img/projects/repairs-1.jpg' %}" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="{% url 'projectdetails' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-repairs">
+          <div class="portfolio-content h-100">
+            <img src="{% static 'assets/img/projects/repairs-1.jpg' %}" class="img-fluid" alt="Infrastructure Repairs">
+            <div class="portfolio-info">
+              <h4>Road Repairs</h4>
+              <p>Improving connectivity across Kenya with durable and well-designed road systems.</p>
+              <a href="{% static 'assets/img/projects/repairs-1.jpg' %}" title="Road Repairs"
+                data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                  class="bi bi-zoom-in"></i></a>
+              <a href="{% url 'projectdetails' %}" title="More Details" class="details-link"><i
+                  class="bi bi-link-45deg"></i></a>
             </div>
-          </div><!-- End Portfolio Item -->
+          </div>
+        </div><!-- End Portfolio Item -->
 
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-design">
-            <div class="portfolio-content h-100">
-              <img src="{% static 'assets/img/projects/design-1.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Books 1</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="{% static 'assets/img/projects/design-1.jpg' %}" title="Branding 1" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="{% url 'projectdetails' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-design">
+          <div class="portfolio-content h-100">
+            <img src="{% static 'assets/img/projects/design-1.jpg' %}" class="img-fluid" alt="Architectural Design">
+            <div class="portfolio-info">
+              <h4>Architectural Design</h4>
+              <p>Innovative designs blending contemporary trends with Kenya’s cultural heritage.</p>
+              <a href="{% static 'assets/img/projects/design-1.jpg' %}" title="Architectural Design"
+                data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <a href="{% url 'projectdetails' %}" title="More Details" class="details-link"><i
+                  class="bi bi-link-45deg"></i></a>
             </div>
-          </div><!-- End Portfolio Item -->
+          </div>
+        </div><!-- End Portfolio Item -->
 
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-remodeling">
-            <div class="portfolio-content h-100">
-              <img src="{% static 'assets/img/projects/remodeling-2.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="{% static 'assets/img/projects/remodeling-2.jpg' %}" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="{% url 'projectdetails' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-remodeling">
+          <div class="portfolio-content h-100">
+            <img src="{% static 'assets/img/projects/remodeling-2.jpg' %}" class="img-fluid" alt="Luxury Apartments">
+            <div class="portfolio-info">
+              <h4>Luxury Apartments</h4>
+              <p>Designing high-end residential spaces that offer both comfort and style.</p>
+              <a href="{% static 'assets/img/projects/remodeling-2.jpg' %}" title="Luxury Apartments"
+                data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <a href="{% url 'projectdetails' %}" title="More Details" class="details-link"><i
+                  class="bi bi-link-45deg"></i></a>
             </div>
-          </div><!-- End Portfolio Item -->
+          </div>
+        </div><!-- End Portfolio Item -->
 
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-construction">
-            <div class="portfolio-content h-100">
-              <img src="{% static 'assets/img/projects/construction-2.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 2</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="{% static 'assets/img/projects/construction-2.jpg' %}" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="{% url 'projectdetails' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-construction">
+          <div class="portfolio-content h-100">
+            <img src="{% static 'assets/img/projects/construction-2.jpg' %}" class="img-fluid"
+              alt="School Construction">
+            <div class="portfolio-info">
+              <h4>School Construction</h4>
+              <p>Building schools equipped with modern facilities to support education in rural areas.</p>
+              <a href="{% static 'assets/img/projects/construction-2.jpg' %}" title="School Construction"
+                data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
+                  class="bi bi-zoom-in"></i></a>
+              <a href="{% url 'projectdetails' %}" title="More Details" class="details-link"><i
+                  class="bi bi-link-45deg"></i></a>
             </div>
-          </div><!-- End Portfolio Item -->
+          </div>
+        </div><!-- End Portfolio Item -->
 
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-repairs">
-            <div class="portfolio-content h-100">
-              <img src="{% static 'assets/img/projects/repairs-2.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 2</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="{% static 'assets/img/projects/repairs-2.jpg' %}" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="{% url 'projectdetails' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-repairs">
+          <div class="portfolio-content h-100">
+            <img src="{% static 'assets/img/projects/repairs-2.jpg' %}" class="img-fluid" alt="Hospital Renovation">
+            <div class="portfolio-info">
+              <h4>Hospital Renovation</h4>
+              <p>Renovating healthcare facilities to improve service delivery and patient care.</p>
+              <a href="{% static 'assets/img/projects/repairs-2.jpg' %}" title="Hospital Renovation"
+                data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                  class="bi bi-zoom-in"></i></a>
+              <a href="{% url 'projectdetails' %}" title="More Details" class="details-link"><i
+                  class="bi bi-link-45deg"></i></a>
             </div>
-          </div><!-- End Portfolio Item -->
+          </div>
+        </div><!-- End Portfolio Item -->
 
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-design">
-            <div class="portfolio-content h-100">
-              <img src="{% static 'assets/img/projects/design-2.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Books 2</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="{% static 'assets/img/projects/design-2.jpg' %}" title="Branding 2" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="{% url 'projectdetails' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-design">
+          <div class="portfolio-content h-100">
+            <img src="{% static 'assets/img/projects/design-2.jpg' %}" class="img-fluid" alt="Cultural Centers">
+            <div class="portfolio-info">
+              <h4>Cultural Centers</h4>
+              <p>Creating spaces that celebrate Kenya’s rich heritage while embracing modern functionality.</p>
+              <a href="{% static 'assets/img/projects/design-2.jpg' %}" title="Cultural Centers"
+                data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <a href="{% url 'projectdetails' %}" title="More Details" class="details-link"><i
+                  class="bi bi-link-45deg"></i></a>
             </div>
-          </div><!-- End Portfolio Item -->
-
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-remodeling">
-            <div class="portfolio-content h-100">
-              <img src="{% static 'assets/img/projects/remodeling-3.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="{% static 'assets/img/projects/remodeling-3.jpg' %}" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="{% url 'projectdetails' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
+          </div>
+        </div><!-- End Portfolio Item -->
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-remodeling">
+          <div class="portfolio-content h-100">
+            <img src="{% static 'assets/img/projects/remodeling-3.jpg' %}" class="img-fluid"
+              alt="Eco-Friendly Home Renovation">
+            <div class="portfolio-info">
+              <h4>Eco-Friendly Home Renovation</h4>
+              <p>Transforming old homes into sustainable, energy-efficient spaces.</p>
+              <a href="{% static 'assets/img/projects/remodeling-3.jpg' %}" title="Eco-Friendly Home Renovation"
+                data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <a href="{% url 'projectdetails' %}" title="More Details" class="details-link"><i
+                  class="bi bi-link-45deg"></i></a>
             </div>
-          </div><!-- End Portfolio Item -->
+          </div>
+        </div><!-- End Portfolio Item -->
 
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-construction">
-            <div class="portfolio-content h-100">
-              <img src="{% static 'assets/img/projects/construction-3.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 3</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="{% static 'assets/img/projects/construction-3.jpg' %}" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="{% url 'projectdetails' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-construction">
+          <div class="portfolio-content h-100">
+            <img src="{% static 'assets/img/projects/construction-3.jpg' %}" class="img-fluid"
+              alt="Modern Office Building">
+            <div class="portfolio-info">
+              <h4>Modern Office Building</h4>
+              <p>State-of-the-art office spaces built with sustainability in mind.</p>
+              <a href="{% static 'assets/img/projects/construction-3.jpg' %}" title="Modern Office Building"
+                data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
+                  class="bi bi-zoom-in"></i></a>
+              <a href="{% url 'projectdetails' %}" title="More Details" class="details-link"><i
+                  class="bi bi-link-45deg"></i></a>
             </div>
-          </div><!-- End Portfolio Item -->
+          </div>
+        </div><!-- End Portfolio Item -->
 
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-repairs">
-            <div class="portfolio-content h-100">
-              <img src="{% static 'assets/img/projects/repairs-3.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 3</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="{% static 'assets/img/projects/repairs-3.jpg' %}" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="{% url 'projectdetails' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-repairs">
+          <div class="portfolio-content h-100">
+            <img src="{% static 'assets/img/projects/repairs-3.jpg' %}" class="img-fluid"
+              alt="Building Repairs and Upgrades">
+            <div class="portfolio-info">
+              <h4>Building Repairs and Upgrades</h4>
+              <p>Comprehensive repair solutions for both residential and commercial properties.</p>
+              <a href="{% static 'assets/img/projects/repairs-3.jpg' %}" title="Building Repairs and Upgrades"
+                data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                  class="bi bi-zoom-in"></i></a>
+              <a href="{% url 'projectdetails' %}" title="More Details" class="details-link"><i
+                  class="bi bi-link-45deg"></i></a>
             </div>
-          </div><!-- End Portfolio Item -->
+          </div>
+        </div><!-- End Portfolio Item -->
 
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-design">
-            <div class="portfolio-content h-100">
-              <img src="{% static 'assets/img/projects/design-3.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Books 3</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="{% static 'assets/img/projects/design-3.jpg' %}" title="Branding 3" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="{% url 'projectdetails' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-design">
+          <div class="portfolio-content h-100">
+            <img src="{% static 'assets/img/projects/design-3.jpg' %}" class="img-fluid"
+              alt="Architectural Design for New Projects">
+            <div class="portfolio-info">
+              <h4>Architectural Design for New Projects</h4>
+              <p>Innovative designs for residential and commercial developments.</p>
+              <a href="{% static 'assets/img/projects/design-3.jpg' %}" title="Architectural Design for New Projects"
+                data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <a href="{% url 'projectdetails' %}" title="More Details" class="details-link"><i
+                  class="bi bi-link-45deg"></i></a>
             </div>
-          </div><!-- End Portfolio Item -->
+          </div>
+        </div><!-- End Portfolio Item -->
 
-        </div><!-- End Portfolio Container -->
-
-      </div>
+      </div><!-- End Portfolio Container -->
 
     </div>
 
-  </section><!-- /Projects Section -->
+  </div>
+
+</section><!-- /Projects Section -->
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonials section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Testimonials</h2>
+    <p>Hear what our clients have to say about working with TanSmart Constructions.</p>
+  </div><!-- End Section Title -->
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="swiper init-swiper">
+      <script type="application/json" class="swiper-config">
+          {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                  "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "bullets",
+                  "clickable": true
+              },
+              "breakpoints": {
+                  "320": {
+                      "slidesPerView": 1,
+                      "spaceBetween": 40
+                  },
+                  "1200": {
+                      "slidesPerView": 2,
+                      "spaceBetween": 20
+                  }
+              }
+          }
+          </script>
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <img src="{% static 'assets/img/testimonials/testimonials-1.jpg' %}" class="testimonial-img"
+                alt="Testimonial Image">
+              <h3>Daniel Otieno</h3>
+              <h4>Homeowner</h4>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span>"TanSmart Constructions turned my house into the perfect home. Their attention to detail and use
+                  of sustainable materials impressed me. Highly recommend their services!"</span>
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+        </div><!-- End Testimonial Item -->
+
+        <div class="swiper-slide">
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <img src="{% static 'assets/img/testimonials/testimonials-2.jpg' %}" class="testimonial-img"
+                alt="Testimonial Image">
+              <h3>Jane Mwangi</h3>
+              <h4>Entrepreneur</h4>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span>"Our new office complex is everything we envisioned and more. TanSmart Constructions delivered on
+                  time and within budget."</span>
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+        </div><!-- End Testimonial Item -->
+
+        <div class="swiper-slide">
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <img src="{% static 'assets/img/testimonials/testimonials-3.jpg' %}" class="testimonial-img"
+                alt="Testimonial Image">
+              <h3>Mary Wanjiku</h3>
+              <h4>School Administrator</h4>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span>"The new classrooms TanSmart Constructions built for our school have greatly improved the learning
+                  environment. Their team was professional and efficient."</span>
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+        </div><!-- End Testimonial Item -->
+
+        <div class="swiper-slide">
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <img src="{% static 'assets/img/testimonials/testimonials-4.jpg' %}" class="testimonial-img"
+                alt="Testimonial Image">
+              <h3>George Mutua</h3>
+              <h4>Real Estate Developer</h4>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span>"I’ve worked with many contractors, but TanSmart Constructions stands out for their
+                  professionalism and commitment to quality. I look forward to collaborating again."</span>
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+        </div><!-- End Testimonial Item -->
+
+        <div class="swiper-slide">
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <img src="{% static 'assets/img/testimonials/testimonials-5.jpg' %}" class="testimonial-img"
+                alt="Testimonial Image">
+              <h3>Jordan Oloka</h3>
+              <h4>Healthcare Facility Manager</h4>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span>"Their work on our hospital renovation was exceptional. The new spaces are functional, modern, and
+                  designed with patients' needs in mind."</span>
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+        </div><!-- End Testimonial Item -->
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+  </div>
+
+</section><!-- /Testimonials Section -->
+
+
+
 {% endblock %}

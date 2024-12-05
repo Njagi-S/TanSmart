@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Starter Page - UpConstruction Bootstrap Template</title>
+  <title> TanSmart Constructions</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
   {% load static %}
@@ -17,7 +17,9 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -47,7 +49,7 @@
       <a href="{% url 'index' %}" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">UpConstruction</h1> <span>.</span>
+        <h1 class="sitename">TanSmart Constructions</h1> <span>.</span>
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -55,26 +57,26 @@
           <li><a href="{% url 'index' %}">Home</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
           <li><a href="{% url 'services' %}">Services</a></li>
-          <li><a href="{% url 'constructions' %}">Constructions</a></li>
+          <!-- <li><a href="{% url 'constructions' %}">Constructions</a></li> -->
           <li><a href="{% url 'projects' %}">Projects</a></li>
-          <li><a href="{% url 'projectdetails' %}">Projects Details</a></li>
-          <li><a href="{% url 'blog' %}">Blog</a></li>
-          <li><a href="{% url 'blogdetails' %}">Blog Details</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <!-- <li><a href="{% url 'projectdetails' %}">Projects Details</a></li> -->
+          <!-- <li><a href="{% url 'blog' %}">Blog</a></li> -->
+          <!-- <li><a href="{% url 'blogdetails' %}">Blog Details</a></li> -->
+          <li class="dropdown"><a href="#"><span>More</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <li><a href="{% url 'constructions' %}">CONSTRUCTIONS</a></li>
+              <li><a href="{% url 'projects' %}">PROJECTS</a></li>
+              <li><a href="{% url 'blog' %}">BLOG</a></li>
+              <li><a href="{% url 'testimonials' %}">TESTIMONIALS</a></li>
+              <li class="dropdown"><a href="#"><span>DETAILS</span> <i
+                    class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
+                  <li><a href="{% url 'projectdetails' %}">PROJECT DETAILS</a></li>
+                  <li><a href="{% url 'blogdetails' %}">BLOG DETAILS</a></li>
+                  <!-- <li><a href="#">Deep Dropdown 1</a></li> -->
                 </ul>
               </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
+              <!-- <li><a href="#">Dropdown</a></li> -->
             </ul>
           </li>
           <li><a href="{% url 'contact' %}">Contact</a></li>
@@ -90,11 +92,14 @@
     <!-- Page Title -->
     <div class="page-title dark-background" style="background-image: url('../static/assets/img/page-title-bg.jpg');">
       <div class="container position-relative">
-        <h1>Starter Page</h1>
+        <h1>Welcome to TanSmart Constructions</h1>
+        <p>At TanSmart Constructions, we build spaces that transform lives. From sustainable homes to large-scale
+          commercial projects, we bring innovation, quality, and precision to every project.</p>
+        <!-- <a href="#get-started" class="btn-get-started">Get Started</a> -->
         <nav class="breadcrumbs">
           <ol>
             <li><a href="{% url 'index' %}">Home</a></li>
-            <li class="current">Starter Page</li>
+            <!-- <li class="current"></li> -->
           </ol>
         </nav>
       </div>
@@ -116,63 +121,63 @@
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6 footer-about">
           <a href="{% url 'index' %}" class="logo d-flex align-items-center">
-            <span class="sitename">UpConstruction</span>
+            <span class="sitename">TanSmart Constructions</span>
           </a>
           <div class="footer-contact pt-3">
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
+            <p>A108 Kimathi Street</p>
+            <p>Nairobi, KE 254</p>
             <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
+            <p><strong>Email:</strong> <span>info@tansmartconstruction.com</span></p>
           </div>
           <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Useful Links</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Our Services</h4>
           <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
+            <li><a href="{% url 'constructions' %}">Construction Projects</a></li>
+            <li><a href="{% url 'services' %}">Architectural Design</a></li>
+            <li><a href="{% url 'services' %}">Renovations</a></li>
+            <li><a href="{% url 'services' %}">Consultancy</a></li>
+            <li><a href="{% url 'services' %}">Sustainable Building</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Hic solutasetp</h4>
+          <h4>Company Information</h4>
           <ul>
-            <li><a href="#">Molestiae accusamus iure</a></li>
-            <li><a href="#">Excepturi dignissimos</a></li>
-            <li><a href="#">Suscipit distinctio</a></li>
-            <li><a href="#">Dilecta</a></li>
-            <li><a href="#">Sit quas consectetur</a></li>
+            <li><a href="{% url 'about' %}">Mission & Values</a></li>
+            <li><a href="{% url 'about' %}">Sustainability Efforts</a></li>
+            <li><a href="{% url 'about' %}">Certifications</a></li>
+            <li><a href="{% url 'projects' %}">Project Portfolio</a></li>
+            <li><a href="{% url 'about' %}">Team Members</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Nobis illum</h4>
+          <h4>Explore</h4>
           <ul>
-            <li><a href="#">Ipsam</a></li>
-            <li><a href="#">Laudantium dolorum</a></li>
-            <li><a href="#">Dinera</a></li>
-            <li><a href="#">Trodelas</a></li>
-            <li><a href="#">Flexo</a></li>
+            <li><a href="{% url 'projects' %}">Latest Projects</a></li>
+            <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
+            <li><a href="{% url 'blogdetails' %}">Client Reviews</a></li>
+            <li><a href="{% url 'blog' %}">Case Studies</a></li>
+            <li><a href="{% url 'projects' %}">Media Gallery</a></li>
           </ul>
         </div>
 
@@ -180,23 +185,25 @@
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">UpConstruction</strong> <span>All Rights Reserved</span></p>
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">TanSmart Constructions</strong> <span>All Rights Reserved</span>
+      </p>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you've purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
         <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
       </div>
     </div>
 
-  </footer>
+</footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<!-- Scroll Top -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+    class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
+<!-- Preloader -->
+<div id="preloader"></div>
+
 
   <!-- Vendor JS Files -->
   <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>

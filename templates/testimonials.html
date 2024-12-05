@@ -1,0 +1,157 @@
+{% extends 'starter-page.html' %}
+
+{% load static %}
+
+{% block body %}
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonials section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Testimonials</h2>
+      <p>Hear what our clients have to say about working with TanSmart Constructions.</p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="swiper init-swiper">
+        <script type="application/json" class="swiper-config">
+        {
+            "loop": true,
+            "speed": 600,
+            "autoplay": {
+                "delay": 5000
+            },
+            "slidesPerView": "auto",
+            "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+            },
+            "breakpoints": {
+                "320": {
+                    "slidesPerView": 1,
+                    "spaceBetween": 40
+                },
+                "1200": {
+                    "slidesPerView": 2,
+                    "spaceBetween": 20
+                }
+            }
+        }
+        </script>
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonials/testimonials-1.jpg' %}" class="testimonial-img"
+                  alt="Testimonial Image">
+                <h3>Daniel Otieno</h3>
+                <h4>Homeowner</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>"TanSmart Constructions turned my house into the perfect home. Their attention to detail and
+                    use of sustainable materials impressed me. Highly recommend their services!"</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+          </div><!-- End Testimonial Item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonials/testimonials-2.jpg' %}" class="testimonial-img"
+                  alt="Testimonial Image">
+                <h3>Jane Mwangi</h3>
+                <h4>Entrepreneur</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>"Our new office complex is everything we envisioned and more. TanSmart Constructions delivered
+                    on time and within budget."</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+          </div><!-- End Testimonial Item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonials/testimonials-3.jpg' %}" class="testimonial-img"
+                  alt="Testimonial Image">
+                <h3>Mary Wanjiku</h3>
+                <h4>School Administrator</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>"The new classrooms TanSmart Constructions built for our school have greatly improved the
+                    learning environment. Their team was professional and efficient."</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+          </div><!-- End Testimonial Item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonials/testimonials-4.jpg' %}" class="testimonial-img"
+                  alt="Testimonial Image">
+                <h3>George Mutua</h3>
+                <h4>Real Estate Developer</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>"I’ve worked with many contractors, but TanSmart Constructions stands out for their
+                    professionalism and commitment to quality. I look forward to collaborating again."</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+          </div><!-- End Testimonial Item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonials/testimonials-5.jpg' %}" class="testimonial-img"
+                  alt="Testimonial Image">
+                <h3>Jordan Oloka</h3>
+                <h4>Healthcare Facility Manager</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>"Their work on our hospital renovation was exceptional. The new spaces are functional, modern,
+                    and designed with patients' needs in mind."</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+          </div><!-- End Testimonial Item -->
+
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+    </div>
+
+  </section><!-- /Testimonials Section -->
+{% endblock %}

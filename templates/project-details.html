@@ -3,103 +3,109 @@
 {% load static%}
 
 {% block body%}
- <!-- Project Details Section -->
- <section id="project-details" class="project-details section">
+<!-- Project Details Section -->
+<section id="project-details" class="project-details section">
 
-    <div class="container" data-aos="fade-up">
+  <div class="container" data-aos="fade-up">
 
-      <div class="portfolio-details-slider swiper init-swiper">
-        <script type="application/json" class="swiper-config">
+    <div class="portfolio-details-slider swiper init-swiper">
+      <script type="application/json" class="swiper-config">
           {
-            "loop": true,
-            "speed": 600,
-            "autoplay": {
-              "delay": 5000
-            },
-            "slidesPerView": "auto",
-            "navigation": {
-              "nextEl": ".swiper-button-next",
-              "prevEl": ".swiper-button-prev"
-            },
-            "pagination": {
-              "el": ".swiper-pagination",
-              "type": "bullets",
-              "clickable": true
-            }
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                  "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "navigation": {
+                  "nextEl": ".swiper-button-next",
+                  "prevEl": ".swiper-button-prev"
+              },
+              "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "bullets",
+                  "clickable": true
+              }
           }
-        </script>
-        <div class="swiper-wrapper align-items-center">
+          </script>
+      <div class="swiper-wrapper align-items-center">
+        <div class="swiper-slide">
+          <img src="{% static 'assets/img/projects/remodeling-1.jpg' %}" alt="Remodeling Project">
+        </div>
+        <div class="swiper-slide">
+          <img src="{% static 'assets/img/projects/remodeling-2.jpg' %}" alt="Project Image 2">
+        </div>
+        <div class="swiper-slide">
+          <img src="{% static 'assets/img/projects/remodeling-3.jpg' %}" alt="Project Image 3">
+        </div>
+      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-pagination"></div>
+    </div>
 
-          <div class="swiper-slide">
-            <img src="{% static 'assets/img/projects/remodeling-1.jpg' %}" alt="">
+    <div class="row justify-content-between gy-4 mt-4">
+
+      <div class="col-lg-8" data-aos="fade-up">
+        <div class="portfolio-description">
+          <h2>Residential Remodeling Project in Nairobi</h2>
+          <p>
+            This project involved the complete transformation of a residential home in Nairobi. Our team worked on both
+            interior and exterior renovations to create a modern, sustainable living space. The project integrated
+            eco-friendly materials and local craftsmanship to achieve a blend of modern design and Kenyan heritage.
+          </p>
+          <p>
+            Our approach focused on maximizing space, enhancing energy efficiency, and incorporating green technologies
+            to reduce the environmental footprint. We worked closely with the client to bring their vision to life while
+            ensuring high-quality construction standards and timely delivery.
+          </p>
+
+          <div class="testimonial-item">
+            <p>
+              <i class="bi bi-quote quote-icon-left"></i>
+              <span>“TanSmart Constructions exceeded our expectations! They not only transformed our home but did so
+                while keeping us informed every step of the way. Their attention to detail is unmatched.”</span>
+              <i class="bi bi-quote quote-icon-right"></i>
+            </p>
+            <div>
+              <img src="{% static 'assets/img/testimonials/testimonials-2.jpg' %}" class="testimonial-img"
+                alt="Client Testimonial">
+              <h3>Jane Mwangi</h3>
+              <h4>Homeowner</h4>
+            </div>
           </div>
 
-          <div class="swiper-slide">
-            <img src="{% static 'assets/img/projects/remodeling-2.jpg' %}" alt="">
-          </div>
+          <p>
+            The remodeling project improved the overall functionality of the space while maintaining aesthetic appeal.
+            The house now boasts open-plan living areas, increased natural light, and efficient use of space, perfect
+            for a growing family.
+          </p>
 
-          <div class="swiper-slide">
-            <img src="{% static 'assets/img/projects/remodeling-3.jpg' %}" alt="">
-          </div>
+          <p>
+            Our expert team ensured that all the work was completed to the highest standards. The project was finished
+            on time, and the client was able to move into their newly renovated home without delay.
+          </p>
 
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-pagination"></div>
       </div>
 
-      <div class="row justify-content-between gy-4 mt-4">
-
-        <div class="col-lg-8" data-aos="fade-up">
-          <div class="portfolio-description">
-            <h2>This is an example of portfolio details</h2>
-            <p>
-              Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-            </p>
-            <p>
-              Amet consequatur qui dolore veniam voluptatem voluptatem sit. Non aspernatur atque natus ut cum nam et. Praesentium error dolores rerum minus sequi quia veritatis eum. Eos et doloribus doloremque nesciunt molestiae laboriosam.
-            </p>
-
-            <div class="testimonial-item">
-              <p>
-                <i class="bi bi-quote quote-icon-left"></i>
-                <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
-                <i class="bi bi-quote quote-icon-right"></i>
-              </p>
-              <div>
-                <img src="{% static 'assets/img/testimonials/testimonials-2.jpg' %}" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-              </div>
-            </div>
-
-            <p>
-              Impedit ipsum quae et aliquid doloribus et voluptatem quasi. Perspiciatis occaecati earum et magnam animi. Quibusdam non qui ea vitae suscipit vitae sunt. Repudiandae incidunt cumque minus deserunt assumenda tempore. Delectus voluptas necessitatibus est.
-            </p>
-
-            <p>
-              Sunt voluptatum sapiente facilis quo odio aut ipsum repellat debitis. Molestiae et autem libero. Explicabo et quod necessitatibus similique quis dolor eum. Numquam eaque praesentium rem et qui nesciunt.
-            </p>
-
-          </div>
+      <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="portfolio-info">
+          <h3>Project Information</h3>
+          <ul>
+            <li><strong>Category</strong> Residential Remodeling</li>
+            <li><strong>Client</strong> Jane Mwangi</li>
+            <li><strong>Project Date</strong> 01 February, 2023</li>
+            <li><strong>Project URL</strong> <a href="#">www.tansmartconstructions.co.ke</a></li>
+            <li><a href="#" class="btn-visit align-self-start">Visit Website</a></li>
+          </ul>
         </div>
-
-        <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
-          <div class="portfolio-info">
-            <h3>Project information</h3>
-            <ul>
-              <li><strong>Category</strong> Web design</li>
-              <li><strong>Client</strong> ASU Company</li>
-              <li><strong>Project date</strong> 01 March, 2020</li>
-              <li><strong>Project URL</strong> <a href="#">www.example.com</a></li>
-              <li><a href="#" class="btn-visit align-self-start">Visit Website</a></li>
-            </ul>
-          </div>
-        </div>
-
       </div>
 
     </div>
 
-  </section><!-- /Project Details Section -->
+  </div>
+
+</section><!-- /Project Details Section -->
+
 {% endblock %}
