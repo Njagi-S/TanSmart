@@ -1,0 +1,34 @@
+{% extends 'starter-page.html' %}
+
+{% load static %}
+
+{% block body %}
+<table class="table table-bordered table-info container">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Message</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for x in quotes %}
+        <tr>
+        <td>{{ x.name }}</td>
+        <td>{{ x.email }}</td>
+        <td>{{ x.phone }}</td>
+        <td>{{ x.message }}</td>
+        <td>
+            <a href="/editquotes/{{ x.id }}" class="btn btn-outline-warning">EDIT</a>
+            <a href="/deletequotes/{{ x.id }}" class="btn btn-outline-danger">DELETE</a>
+        </td>
+        </tr>
+
+    {% endfor %}
+
+
+    </tbody>
+    </table>
+{% endblock %}

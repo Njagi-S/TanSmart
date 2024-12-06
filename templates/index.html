@@ -56,11 +56,9 @@
           <li><a href="{% url 'index' %}" class="active">Home</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
           <li><a href="{% url 'services' %}">Services</a></li>
-          <!-- <li><a href="{% url 'constructions' %}">Constructions</a></li> -->
           <li><a href="{% url 'projects' %}">Projects</a></li>
-          <!-- <li><a href="{% url 'projectdetails' %}">Project Details</a></li> -->
-          <!-- <li><a href="{% url 'blog' %}">Blog</a></li> -->
-          <!-- <li><a href="{% url 'blogdetails' %}">Blog Details</a></li> -->
+          <li><a href="{% url 'upload_project' %}">Upload Your Project</a></li>
+          <li><a href="{% url 'show_projects' %}">Requested Client Project</a></li>
           <li class="dropdown"><a href="#"><span>MORE</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="{% url 'constructions' %}">CONSTRUCTIONS</a></li>
@@ -84,6 +82,12 @@
                     class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
                   <li><a href="{% url 'showcomments' %}">SHOW COMMENTS</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>QUOTE DETAILS</span> <i
+                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="{% url 'showquotes' %}">SHOW QUOTES</a></li>
                 </ul>
               </li>
               <!-- <li><a href="#">Dropdown</a></li> -->
@@ -167,7 +171,8 @@
           </div>
 
           <div class="col-lg-5" data-aos="zoom-out" data-aos-delay="200">
-            <form action="forms/quote.php" method="post" class="php-email-form">
+            <form action="" method="POST" class="">
+              {% csrf_token %}
               <h3>Get a quote</h3>
               <p>Looking to start a project? Share your details, and our team will reach out with a personalized plan
                 that
@@ -195,7 +200,7 @@
                   <div class="error-message"></div>
                   <div class="sent-message">Your quote request has been sent successfully. Thank you!</div>
 
-                  <button type="submit">Get a quote</button>
+                  <button type="submit" class="btn btn-primary">Get a quote</button>
                 </div>
 
               </div>

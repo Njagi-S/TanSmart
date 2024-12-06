@@ -1,0 +1,48 @@
+{% extends 'starter-page.html' %}
+
+{% load static %}
+
+{% block body %}
+<form method="POST" action="{% url 'upload_project' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container mt-4">
+      <h3 class="mb-4">Upload Project</h3>
+  
+      <!-- Client's Name -->
+      <div class="mb-3">
+        <label for="clientName" class="form-label">Client's Name</label>
+        <input type="text" class="form-control" id="clientName" name="client_name" placeholder="Enter client's name" required>
+      </div>
+  
+      <!-- Type of Project -->
+      <div class="mb-3">
+        <label for="projectType" class="form-label">Type of Project</label>
+        <select class="form-select" id="projectType" name="project_type" required>
+          <option value="" disabled selected>Select project type</option>
+          <option value="Residential">Residential</option>
+          <option value="Commercial">Commercial</option>
+          <option value="Industrial">Industrial</option>
+          <option value="Renovation">Renovation</option>
+        </select>
+      </div>
+  
+      <!-- Project Price -->
+      <div class="mb-3">
+        <label for="projectPrice" class="form-label">Project Price</label>
+        <input type="number" class="form-control" id="projectPrice" name="project_price" placeholder="Enter project price in KES" required>
+      </div>
+  
+      <!-- File Upload -->
+      <div class="mb-3">
+        <label for="projectImage" class="form-label">Upload Project Image</label>
+        <input type="file" class="form-control" id="projectImage" name="project_image" accept="image/*" required>
+      </div>
+  
+      <!-- Submit Button -->
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Upload Project</button>
+      </div>
+    </div>
+  </form>
+  
+{% endblock %}

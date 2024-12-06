@@ -1,20 +1,53 @@
 import json
 
 #import requests
-#Sfrom django.http import HttpResponse
+#from django.http import HttpResponse
 #from requests.auth import HTTPBasicAuth
 
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
 #from tanapp.credentials import MpesaAccessToken, LipanaMpesaPassword
-from tanapp.models import Contacts, Comments
-from tanapp.forms import ContactForm, CommentForm
+from tanapp.models import Contacts, Comments, Quotes, Project
+from tanapp.forms import ContactForm, CommentForm, QuoteForm
 
 
 def home(request):
     return render(request, 'index.html')
 
 def about(request):
-    return render(request, 'about.html')
+    if request.method == 'POST':
+        myquote = Quotes(
+            name = request.POST['name'],
+            email = request.POST['email'],
+            phone = request.POST['phone'],
+            message = request.POST['message'],
+        )
+        myquote.save()
+        return redirect('/showquotes')
+    else:
+        return render(request, 'about.html')
+
+def showquotes(request):
+    allquotes = Quotes.objects.all()
+    return render(request, 'showquotes.html', {'quotes': allquotes})
+
+def deletequotes(request, id):
+    myquotes = Quotes.objects.get(id=id)
+    myquotes.delete()
+    return redirect('/showquotes')
+
+def editquotes(request, id):
+    editquote = Quotes.objects.get(id=id)
+    return render(request, 'editquotes.html', {'quotes': editquote})
+
+def updatequotes(request, id):
+    updatequoteinfo = Quotes.objects.get(id=id)
+    form = QuoteForm(request.POST, instance=updatequoteinfo)
+    if form.is_valid():
+        form.save()
+        return redirect('/showquotes')
+    else:
+        return render(request, 'editquotes.html')
 
 def blogdetails(request):
     if request.method == 'POST':
@@ -100,6 +133,37 @@ def projectdetails(request):
 
 def projects(request):
     return render(request, 'projects.html')
+
+def upload_project(request):
+    if request.method == 'POST':
+        client_name = request.POST['client_name']
+        project_type = request.POST['project_type']
+        project_price = request.POST['project_price']
+        project_image = request.FILES['project_image']
+
+        # Save to database
+        project = Project(
+            client_name=client_name,
+            project_type=project_type,
+            project_price=project_price,
+            project_image=project_image,
+        )
+        project.save()
+
+        messages.success(request, 'Project uploaded successfully!')
+        return redirect('show_projects')  # Redirect to home or any desired page
+
+    return render(request, 'upload_project.html')
+
+def show_projects(request):
+    projects = Project.objects.all()  # Fetch all projects from the database
+    return render(request, 'show_projects.html', {'projects': projects})
+
+def delete_project(request, id):
+    project = get_object_or_404(Project, id=id)
+    project.delete()
+    return redirect('show_projects')
+
 
 def services(request):
     return render(request, 'services.html')

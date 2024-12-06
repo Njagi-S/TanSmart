@@ -20,3 +20,26 @@ class Comments(models.Model):
     
     def __str__(self):
         return self.name  # Returns the name of the person when the object is printed.
+
+class Quotes(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    phone = models.CharField(max_length=13)
+    message = models.TextField()
+    
+    def __str__(self):
+        return self.name
+
+class Project(models.Model):
+    client_name = models.CharField(max_length=100)
+    project_type = models.CharField(max_length=50, choices=[
+        ('Residential', 'Residential'),
+        ('Commercial', 'Commercial'),
+        ('Industrial', 'Industrial'),
+        ('Renovation', 'Renovation'),
+    ])
+    project_price = models.DecimalField(max_digits=10, decimal_places=2)
+    project_image = models.ImageField(upload_to='project_images/')
+
+    def __str__(self):
+        return f"{self.client_name} - {self.project_type}"

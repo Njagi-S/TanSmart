@@ -10,6 +10,14 @@ urlpatterns = [
     
     path('about/', views.about, name='about'),
     
+    path('showquotes/', views.showquotes, name='showquotes'),
+    
+    path('deletequotes/<int:id>', views.deletequotes, name = 'deletequotes'),
+    
+    path('editquotes/<int:id>', views.editquotes, name='editquotes'),
+    
+    path('updatequotes/<int:id>', views.updatequotes, name='updatequotes'),
+    
     path('blogdetails/', views.blogdetails, name='blogdetails'),
     
     path('showcomments/', views.showcomments, name='showcomments'),
@@ -47,4 +55,10 @@ urlpatterns = [
 
     # URL to update a contact inquiry (with the contact ID as a parameter).
     path('updatecontacts/<int:id>', views.updatecontacts, name='updatecontacts'),  # Calls the `updatecontacts` view, named 'updatecontacts'.from django.contrib import admin
+    
+    path('upload_project/', views.upload_project, name='upload_project'),
+    
+    path('show_projects/', views.show_projects, name='show_projects'),
+    
+    path('delete_project/<int:id>/', views.delete_project, name='delete_project'),
 ]
