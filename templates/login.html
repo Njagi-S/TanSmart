@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Tansmart Constructions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <style>
+        /* Add your styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .login-form {
+            display: flex;
+            max-width: 900px;
+            width: 100%;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .form-content {
+            padding: 2rem;
+            flex: 1;
+        }
+
+        .form-content h2 {
+            margin-bottom: 1.5rem;
+            color: #007bff;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 0.5rem;
+        }
+
+        .input-group i {
+            margin-right: 0.5rem;
+            color: #007bff;
+        }
+
+        .input-group input {
+            border: none;
+            outline: none;
+            width: 100%;
+            padding: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .checkbox-group {
+            margin: 1rem 0;
+        }
+
+        .checkbox-group input {
+            margin-right: 0.5rem;
+        }
+
+        .checkbox-group label {
+            font-size: 0.9rem;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 0.8rem;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .already-member {
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .already-member a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .already-member a:hover {
+            text-decoration: underline;
+        }
+
+        .image-content {
+            flex: 1;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-content img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .login-form {
+                flex-direction: column;
+                width: 90%;
+            }
+
+            .image-content,
+            .form-content {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="login-form">
+            <div class="image-content">
+                <img src="https://cdn.pixabay.com/photo/2024/05/20/17/25/construction-8775840_640.png"
+                    alt="User Illustration">
+            </div>
+            <div class="form-content">
+                <h2>Login</h2>
+
+                {% if messages %}
+                <div class="messages">
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <form method="POST" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" name="username" placeholder="Username" required />
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" name="password" id="password" placeholder="Password" required />
+                        <i class="fas fa-eye" id="toggle-password" style="cursor: pointer;"></i>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="remember-me" name="remember-me" />
+                        <label for="remember-me">Remember me</label>
+                    </div>
+                    <button type="submit">Log In</button>
+                </form>
+                <p class="already-member">
+                    <a href="{% url 'register' %}">Create an account</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- JavaScript for Show Password functionality -->
+    <script>
+        // Show/Hide password toggle
+        const togglePassword = document.getElementById("toggle-password");
+        const passwordField = document.getElementById("password");
+
+        togglePassword.addEventListener("click", function() {
+            // Toggle password visibility
+            const type = passwordField.type === "password" ? "text" : "password";
+            passwordField.type = type;
+
+            // Toggle the icon
+            this.classList.toggle("fa-eye-slash");
+        });
+    </script>
+</body>
+
+</html>

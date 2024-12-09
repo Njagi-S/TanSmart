@@ -1,18 +1,38 @@
 import json
 
-#import requests
-#from django.http import HttpResponse
-#from requests.auth import HTTPBasicAuth
+import requests
+from django.http import HttpResponse
+from requests.auth import HTTPBasicAuth
 
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-#from tanapp.credentials import MpesaAccessToken, LipanaMpesaPassword
-from tanapp.models import Contacts, Comments, Quotes, Project
+from django.contrib.auth.decorators import login_required
+from tanapp.credentials import MpesaAccessToken, LipanaMpesaPassword
+from tanapp.models import Contacts, Comments, Quotes, Project, Member
 from tanapp.forms import ContactForm, CommentForm, QuoteForm
 
-
+@login_required
 def home(request):
-    return render(request, 'index.html')
+    if request.method == 'POST':  # Handle form submission for quotes
+        myquote = Quotes(
+            name=request.POST['name'],
+            email=request.POST['email'],
+            phone=request.POST['phone'],
+            message=request.POST['message'],
+        )
+        myquote.save()
+        return redirect('/showquotes')  # Redirect after saving the quote
+
+    # Handle GET request: Retrieve member details for the homepage
+    member_id = request.session.get("member_id")
+    member = None
+    if member_id:
+        try:
+            member = Member.objects.get(id=member_id)
+        except Member.DoesNotExist:
+            pass  # Handle the case where the member does not exist (optional)
+
+    return render(request, "index.html", {"member": member})
 
 def about(request):
     if request.method == 'POST':
@@ -173,3 +193,111 @@ def starter(request):
 
 def testimonials(request):
     return render(request, 'testimonials.html')
+
+def register(request):
+    if request.method == "POST":
+        # Extract form data
+        first_name = request.POST["first_name"]
+        last_name = request.POST["last_name"]
+        username = request.POST["username"]
+        email = request.POST["email"]
+        password = request.POST["password"]
+        confirm_password = request.POST["confirm_password"]
+
+        # Validate passwords match
+        if password != confirm_password:
+            return render(request, "register.html", {"error": "Passwords do not match"})
+
+        # Check if username or email already exists
+        if Member.objects.filter(username=username).exists():
+            return render(request, "register.html", {"error": "Username already taken"})
+        if Member.objects.filter(email=email).exists():
+            return render(request, "register.html", {"error": "Email already registered"})
+
+        # Create and save the member
+        member = Member(
+            first_name=first_name,
+            last_name=last_name,
+            username=username,
+            email=email,
+        )
+        member.set_password(password)  # Hash the password
+        member.save()
+
+        return redirect("login")  # Redirect to login page after successful registration
+
+    return render(request, "register.html")
+
+def login(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        password = request.POST["password"]
+
+        try:
+            # Retrieve the member
+            member = Member.objects.get(username=username)
+
+            # Check if the password is correct
+            if member.check_password(password):
+                # Save user in session
+                request.session["member_id"] = member.id
+                return redirect("index")  # Redirect to the home page
+            else:
+                return render(request, "login.html", {"error": "Invalid credentials"})
+        except Member.DoesNotExist:
+            return render(request, "login.html", {"error": "Invalid credentials"})
+
+    return render(request, "login.html")
+
+def logout(request):
+    if "member_id" in request.session:
+        del request.session["member_id"]  # Remove member from session
+    return redirect("login")  # Redirect to login page
+
+def login_required(view_func):
+    def wrapper(request, *args, **kwargs):
+        if "member_id" not in request.session:
+            return redirect("login")  # Redirect to login if not logged in
+        return view_func(request, *args, **kwargs)
+    return wrapper
+
+def token(request):
+    consumer_key = 'IQRZWUY85JSnR4MgsoBcpt4KLbEGD08L1AA2rrkKRc8MRJKP'
+    consumer_secret = 'ffubtfjBk7SADV1XaAYy9YBuxAgxGsjBeQjYDMX4Lu7PLlqTBDfcAKWLk10nfiEJ'
+    api_URL = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials'
+
+    r = requests.get(api_URL, auth=HTTPBasicAuth(
+        consumer_key, consumer_secret))
+    mpesa_access_token = json.loads(r.text)
+    validated_mpesa_access_token = mpesa_access_token["access_token"]
+
+    return render(request, 'token.html', {"token":validated_mpesa_access_token})
+
+def pay(request):
+    return render(request, 'pay.html')
+
+
+
+def stk(request):
+    if request.method =="POST":
+        phone = request.POST['phone']
+        amount = request.POST['amount']
+        access_token = MpesaAccessToken.validated_mpesa_access_token
+        api_url = "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest"
+        headers = {"Authorization": "Bearer %s" % access_token}
+        request = {
+            "BusinessShortCode": LipanaMpesaPassword.Business_short_code,
+            "Password": LipanaMpesaPassword.decode_password,
+            "Timestamp": LipanaMpesaPassword.lipa_time,
+            "TransactionType": "CustomerPayBillOnline",
+            "Amount": amount,
+            "PartyA": phone,
+            "PartyB": LipanaMpesaPassword.Business_short_code,
+            "PhoneNumber": phone,
+            "CallBackURL": "https://sandbox.safaricom.co.ke/mpesa/",
+            "AccountReference": "TanSmart Constructions",
+            "TransactionDesc": "Construction Charges"
+        }
+        response = requests.post(api_url, json=request, headers=headers)
+        return HttpResponse("Success")
+        #return redirect('/show_projects')

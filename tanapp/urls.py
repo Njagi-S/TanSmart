@@ -6,7 +6,7 @@ urlpatterns = [
     # Admin interface route
     path('admin/', admin.site.urls),
     
-    path('', views.home, name='index'),
+    path('home/', views.home, name='index'),
     
     path('about/', views.about, name='about'),
     
@@ -61,4 +61,16 @@ urlpatterns = [
     path('show_projects/', views.show_projects, name='show_projects'),
     
     path('delete_project/<int:id>/', views.delete_project, name='delete_project'),
+    
+    path('', views.login, name='login'),    # URL for login
+    
+    path('register/', views.register, name='register'),  # URL for registration
+    
+    path('logout/', views.logout, name='logout'),
+    
+    path('pay/', views.pay, name='pay'),
+    
+    path('stk/', views.stk, name='stk'),
+    
+    path('token/', views.token, name='token'),
 ]
